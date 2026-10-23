@@ -38,14 +38,14 @@ TODO: add a diagram (documents -> Tokenizer -> InvertedIndex -> Ranker -> result
 | Autocomplete | O(W) | O(prefix length + subtree) |
 
 ## Benchmarks
-
-TODO: fill in with real measurements (Stage 5).
-
-| Documents | Naive (ms/query) | Index (ms/query) | Speedup |
-|---|---|---|---|
-| 1,000 | | | |
-| 10,000 | | | |
-| 20,000 | | | |
+| Documents | Naive (ms/query) | Index (ms/query) | Ranked top-10 (ms/query) | Speedup |
+|---|---|---|---|---|
+| 1,000 | 36.692 | 0.0546 | 0.2566 | 673x |
+| 5,000 | 187.364 | 0.1548 | 0.3667 | 1,211x |
+| 10,000 | 351.318 | 0.1455 | 0.1700 | 2,415x |
+| 18,846 | 646.818 | 0.1217 | 0.2851 | 5,313x |
+Averaged over 50 random 1-2 word queries on the 20 Newsgroups dataset, after a JVM warm-up.
+Index timings are sub-millisecond and noisy, so treat the exact speedup as approximate.
 
 ## What I'd improve next
 
