@@ -1,0 +1,1 @@
+A search engine builds an inverted index mapping each word to the documents that contain it. Ranking uses term frequency and inverse document frequency.

@@ -1,0 +1,1 @@
+A priority queue backed by a heap returns the smallest element quickly. Keeping a heap of size k finds the top k items efficiently.

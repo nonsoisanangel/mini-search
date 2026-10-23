@@ -1,0 +1,1 @@
+A trie stores strings by shared prefixes, which makes autocomplete fast. Each node represents one character along a path.

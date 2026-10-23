@@ -1,0 +1,1 @@
+Hash maps give average constant time lookups. Java provides HashMap, and Python provides dict for the same purpose.

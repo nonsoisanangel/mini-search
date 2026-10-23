@@ -1,0 +1,1 @@
+Binary search finds a value in a sorted array in logarithmic time by repeatedly halving the search range.

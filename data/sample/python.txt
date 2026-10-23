@@ -1,0 +1,1 @@
+Python is a dynamically typed programming language popular for data science, scripting, and machine learning. Its syntax favors readability.

@@ -1,0 +1,1 @@
+Java is a statically typed programming language used for enterprise backend services and Android apps. The JVM runs Java bytecode on many platforms.
