@@ -4,6 +4,7 @@ package search;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Map;
 
 /**
@@ -56,8 +57,39 @@ public class InvertedIndex {
      * Hint: intersect posting lists with two pointers (O(m + n)).
      * Start with the rarest term (smallest list) to shrink the work.
      */
+    private List<Integer> intersect(List<Integer> docIds, List<Posting> postings) {
+        List<Integer> result = new ArrayList<>();
+        int i = 0;
+        int j = 0;
+        while (i < docIds.size() && j < postings.size()) {
+            int a = docIds.get(i);
+            int b = postings.get(j).docId();
+            if (a == b) {
+                result.add(a);
+                i++;
+                j++;
+            } else if (a < b) {
+                i++;
+            } else {
+                j++;
+            }
+        }
+        return result;
+    }
     public List<Integer> searchAnd(List<String> terms) {
-        // TODO Stage 2
-        throw new UnsupportedOperationException("TODO: implement searchAnd");
+        if (terms.isEmpty()) return List.of();
+
+        // Rarest term first, so the working list starts as small as possible
+        List<String> sorted = new ArrayList<>(terms);
+        sorted.sort(Comparator.comparingInt(this::docFreq));
+
+        List<Integer> result = new ArrayList<>();
+        for (Posting p : getPostings(sorted.get(0))) {
+            result.add(p.docId());
+        }
+        for (int i = 1; i < sorted.size() && !result.isEmpty(); i++) {
+            result = intersect(result, getPostings(sorted.get(i)));
+        }
+        return result;
     }
 }
