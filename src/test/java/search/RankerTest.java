@@ -8,7 +8,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-@Disabled("Stage 3: remove this line when you start Ranker")
 class RankerTest {
 
     private Ranker ranker;
