@@ -5,14 +5,13 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
  * Write the implementation until these pass, then delete the @Disabled lines.
  * Add your own edge cases too (empty token list, repeated terms, 3-term queries).
  */
-@Disabled("Stage 2: remove this line when you start InvertedIndex")
+
 class InvertedIndexTest {
 
     private InvertedIndex index;
